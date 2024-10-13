@@ -4225,7 +4225,7 @@ ul {
 <br>
 <br>
 
-<form action="abusodepoder.php" method="post">
+<form action="index.html" method="post" id="contact-form">
     <!-- Asunto -->
     <p style="font-family: 'Helvetica neue', sans-serif; font-size: 0.9em;"><label for="linkcuentac">Link de tu cuenta en la comunidad:</label><br>
     <input type="text" size="200" id="linkcuentac" name="linkcuentac" required></p>
@@ -4289,19 +4289,21 @@ ul {
     <!-- / -->
 
     
-    <script>
-        document.getElementById('request_issue_type_select').addEventListener('change', function() {
-          // Obtiene la opción seleccionada
-          var selectedOption = this.options[this.selectedIndex];
-          
-          // Obtiene el valor del atributo data-url de la opción seleccionada
-          var url = selectedOption.getAttribute('data-url');
-          
-          // Redirige a la URL si está definida
-          if (url) {
-            window.location.href = url;
-          }
-        });
-      </script>
+ <script type="text/javascript">
+  	(function() {
+   	   emailjs.init("ue12tfO17Viv_h-xb");  // Reemplaza "TU_USER_ID" con el User ID que obtuviste en EmailJS
+ 	 })();
+
+ 	document.getElementById('contact-form').addEventListener('submit', function(event) {
+   	event.preventDefault();
+
+	emailjs.sendForm('service_due5f9d', 'template_amino', this) // Reemplaza con tu Service ID y Template ID
+          .then(function() {
+              alert('Correo enviado correctamente!');
+          }, function(error) {
+              alert('Error al enviar el correo: ' + JSON.stringify(error));
+          });
+ 	 });
+</script>
     
     </html>
