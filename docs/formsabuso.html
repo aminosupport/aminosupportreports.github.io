@@ -4293,20 +4293,26 @@ ul {
 
     
  <script type="text/javascript">
-  	(function() {
-   	   emailjs.init("ue12tfO17Viv_h-xb");  // Reemplaza "TU_USER_ID" con el User ID que obtuviste en EmailJS
- 	 })();
+  	const btn = document.getElementById('button');
 
- 	document.getElementById("contact-form").addEventListener("submit", function(event) {
-   	event.preventDefault();
+document.getElementById('contact-form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
 
-	emailjs.sendForm("service_due5f9d", "template_amino", this) // Reemplaza con tu Service ID y Template ID
-          .then(function() {
-              alert("Correo enviado correctamente!");
-          }, function(error) {
-              alert("Error al enviar el correo: " + JSON.stringify(error));
-          });
- 	 });
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_amino';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Enviar';
+      alert(JSON.stringify(err));
+    });
+});
 </script>
     
     </html>
