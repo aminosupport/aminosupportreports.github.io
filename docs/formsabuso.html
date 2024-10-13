@@ -4293,17 +4293,17 @@ ul {
     
  <script type="text/javascript">
   	(function() {
-   	   emailjs.init("m8ze7WNDW6BjbSI_X5Emi");  // Reemplaza "TU_USER_ID" con el User ID que obtuviste en EmailJS
+   	   emailjs.init("ue12tfO17Viv_h-xb");  // Reemplaza "TU_USER_ID" con el User ID que obtuviste en EmailJS
  	 })();
 
- 	document.getElementById('contact-form').addEventListener('submit', function(event) {
+ 	document.getElementById("contact-form").addEventListener("submit", function(event) {
    	event.preventDefault();
 
-	emailjs.sendForm('service_due5f9d', 'template_amino', this) // Reemplaza con tu Service ID y Template ID
+	emailjs.sendForm("service_due5f9d", "template_amino", this) // Reemplaza con tu Service ID y Template ID
           .then(function() {
-              alert('Correo enviado correctamente!');
+              alert("Correo enviado correctamente!");
           }, function(error) {
-              alert('Error al enviar el correo: ' + JSON.stringify(error));
+              alert("Error al enviar el correo: " + JSON.stringify(error));
           });
  	 });
 </script>
