@@ -12,9 +12,6 @@
     
     <link rel="icon" type="image/x-icon" href="/hc/theming_assets/01HZPJ9TVAKP7V30DR1C1ZHP1H">
 
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-	<script type="text/javascript"> emailjs.init('ue12tfO17Viv_h-xb') </script>
-
     <style>
 
 @charset "UTF-8";
@@ -4228,7 +4225,7 @@ ul {
 <br>
 <br>
 
-<form method="post" id="contact-form">
+<form action="https://formspree.io/f/xjkvvyon" method="post" id="contact-form">
     <!-- Asunto -->
     <p style="font-family: 'Helvetica neue', sans-serif; font-size: 0.9em;"><label for="linkcuentac">Link de tu cuenta en la comunidad:</label><br>
     <input type="text" size="200" id="linkcuentac" name="linkcuentac" required></p>
@@ -4291,28 +4288,5 @@ ul {
 
     <!-- / -->
 
-    
- <script type="text/javascript">
-  	const btn = document.getElementById('button');
-
-document.getElementById('contact-form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
-
-   btn.value = 'Enviando...';
-
-   const serviceID = 'service_due5f9d';
-   const templateID = 'template_amino';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Enviar';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Enviar';
-      alert(JSON.stringify(err));
-    });
-});
-</script>
     
     </html>
